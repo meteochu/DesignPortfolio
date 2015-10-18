@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Andy L (meteochu)">
+  <meta name="author" content="Andy (meteochu)">
+
+  <title>Andy's Portfolio</title>
+
+  <!-- CSS and Javascript -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/meteochu.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/jribbble.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="top-navbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#home" data-toggle="tab"> Home</a></li>
+          <li><a href="#designs" data-toggle="tab"> Designs</a></li>
+          <li><a href="#axla" data-toggle="tab"> Axla 3</a></li>
+          <li><a href="https://about.me/meteochu"> About</a></li>
+          <li><a href="http://blog.meteochu.me"> Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tab-content">
+      <!-- Home Tab -->
+      <div class="tab-pane fade in active" id="home">
+        <a href="#axla" data-toggle="tab">
+          <center>
+            <img class="img-responsive" src="images/axla-3.png" srcset="images/axla-3.png 1x, images/axla-3@2x.png 2x" onDragStart="return false" />
+          </center>
+        </a>
+
+        <hr>
+
+        <ul id="dribbbleShotsHome"></ul>
+        <script>
+          $.jribbble.setToken('fa3aa5ae50843f46a01f1f4f24e1a35925831ea07c38ed434b861132b6fd7f20');
+          $.jribbble.users('meteochu').shots({
+            per_page: 4
+          }).then(function(shots) {
+            var html = '';
+            shots.forEach(function(shot) {
+              // See the Dribbble docs for all available shot properties.
+              html += '<li><div class="col-lg-3 col-md-6 col-sm-6"><div class="imageHolder">';
+              html += '<a href="' + shot.html_url + '">';
+              html += '<img src="' + shot.images.normal + '" ';
+              html += 'class="img-responsive img-rounded" alt="' + shot.title + '">';
+              html += '</a><p class="captionSmall">' + shot.title + '</p></div></div></li>';
+            });
+            document.getElementById('dribbbleShotsHome').innerHTML = html;
+          });
+        </script>
+      </div>
+      <!-- Design Tab -->
+      <div class="tab-pane fade" id="designs">
+        <div class="container">
+          <div class="col-lg-10 col-lg-offset-1">
+            <h1 align="center">Design Portfolio</h1>
+            <hr>
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="title" align="center">Icon Designs</h2>
+                <img src="images/icondesigns.png" srcset="images/icondesigns.png 1x, images/icondesigns@2x.png 2x" class="img-responsive" onDragStart="return false">
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="container">
+          <h2 class="title" align="center">Dribbble Shots</h2>
+          <ul id="shotsByPlayerId"></ul>
+          <script>
+            $.jribbble.setToken('fa3aa5ae50843f46a01f1f4f24e1a35925831ea07c38ed434b861132b6fd7f20');
+            $.jribbble.users('meteochu').shots({
+              per_page: 12
+            }).then(function(shots) {
+              var html = '';
+              shots.forEach(function(shot) {
+                // See the Dribbble docs for all available shot properties.
+                html += '<li><div class="col-lg-3 col-md-3 col-sm-6"><div class="imageHolder">';
+                html += '<a href="' + shot.html_url + '">';
+                html += '<img src="' + shot.images.normal + '" class="img-responsive img-rounded" ';
+                html += 'alt="' + shot.title + '"></a>';
+                html += '<p class="caption">' + shot.title + '</p></div></div></li>';
+              });
+              document.getElementById('shotsByPlayerId').innerHTML = html;
+            });
+          </script>
+        </div>
+        <br>
+
+      </div>
+      <!-- Axla 3 Tab -->
+      <div class="tab-pane fade" id="axla">
+        <div class="container">
+          <center>
+            <div class="row">
+              <div class="col-lg-10 col-lg-offset-1">
+                <div class="col-lg-4 col-lg-offset-2 col-md-4 col-sm-12">
+                  <br>
+                  <br>
+                  <h2 style="font-size:55pt;">Axla 3</h2>
+                  <h3>Hey. I'm back.</h3>
+                  <br>
+                  <h3>Available for iOS 9</h3>
+                  <br>
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                  <br>
+                  <img id="axla-img" onDragStart="return false" src="images/axla-ss.png" srcset="images/axla-ss.png 1x, images/axla-ss@2x.png 2x" />
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="container">
+              <div class="col-lg-8 col-lg-offset-2">
+                <p>
+                  Axla 3 is the next level theme that fixes everything its predecessors weren't. The colour pallete was hand picked and remade, and many of the glyphs in the icons were scraped and redrawn from scratch. Axla 3 is the next generation theme that further connects
+                  the colourfulness and simplicity of the previous versions.
+                  <br>
+                  <br> Axla 3 includes over 400 redesigned app icons, 300 over Axla 1.0 and 200 over Axla 2.0! It supports all devices running iOS 9; from the iPad 2 to the iPad Air 2; iPod touch (5th gen and 6th gen); and iPhone 4s to iPhone 6s / 6s Plus.
+                </p>
+              </div>
+            </div>
+            <hr>
+            <div class="container">
+              <div class="col-lg-8 col-lg-offset-2">
+                <h3>Icon Request Instructions</h3>
+                <table class="table" id="iconRequestList">
+                  <tr>
+                    <td>1. Find the .IPA File of the app you'd like to request and unzip the file.</td>
+                  </tr>
+                  <tr>
+                    <td>2. Navigate to /AppName/Payload/<i>AppName</i>.app/ and look for the <b>Info.plist</b> file and copy it</td>
+                  </tr>
+                  <tr>
+                    <td>3. Look for the actaul Icon Files. <i>AppIcon..., Icon..., app_icon...</i></td>
+                  </tr>
+                  <tr>
+                    <td>4. Copy the icon files and the Info.plist file, and add it to a folder and compress it into a .zip file</td>
+                  </tr>
+                  <tr>
+                    <td>5. Email me at <a href="mailto:andy@meteochu.me">andy@meteochu.me</a> with the Zip file as the attachment and specify what app it is.</td>
+                  </tr>
+                  <tr>
+                    <td>6. Wait for the next update :)</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <hr>
+            <div class="container" id="axla-list">
+              <h3>Supported Apps</h3>
+              <ul class="list" style="font-size: 12pt">
+                <li>1Password</li>
+                <li>7 Minute Workout</li>
+                <li>7min Workout</li>
+                <li>8track</li>
+                <li>9gag</li>
+                <li>about.me</li>
+                <li>AccuWeather</li>
+                <li>Acompli</li>
+                <li>Actions</li>
+                <li>Activator</li>
+                <li>Activity (Fitness)</li>
+                <li>Adobe Colors</li>
+                <li>Adobe Ideas</li>
+                <li>Air Canada</li>
+                <li>AirFloat</li>
+                <li>Airport Utilities</li>
+                <li>AirTransfer+</li>
+                <li>AirWeb</li>
+                <li>Alarmy</li>
+                <li>Alien Blue</li>
+                <li>Amazon</li>
+                <li>AMC Theatres</li>
+                <li>App Store</li>
+                <li>Appetites</li>
+                <li>Apple News</li>
+                <li>Apple Store</li>
+                <li>ask.fm</li>
+                <li>AskForTask</li>
+                <li>Authy</li>
+                <li>Bank of America</li>
+                <li>Basecamp</li>
+                <li>BBM</li>
+                <li>Beat Music</li>
+                <li>BeHance</li>
+                <li>Bing</li>
+                <li>biteSMS</li>
+                <li>Blackboard Learn</li>
+                <li>Blogger</li>
+                <li>Boltbus</li>
+                <li>box</li>
+                <li>Boxie</li>
+                <li>Bubbli</li>
+                <li>bump</li>
+                <li>BytaFont 2</li>
+                <li>Calculator</li>
+                <li>Calendar</li>
+                <li>Callbar</li>
+                <li>Camera Noir</li>
+                <li>Camera</li>
+                <li>Camera+</li>
+                <li>Canada Post</li>
+                <li>CARROT To-Do</li>
+                <li>Chase</li>
+                <li>ChatNow</li>
+                <li>Cineplex</li>
+                <li>CityMapper</li>
+                <li>Clear</li>
+                <li>Clear+</li>
+                <li>Clock</li>
+                <li>Clone Camera</li>
+                <li>CloudMagic</li>
+                <li>ClouDrop</li>
+                <li>Cluster</li>
+                <li>Code Anywhere</li>
+                <li>Colloquy</li>
+                <li>Compass</li>
+                <li>Concepts</li>
+                <li>Contacts</li>
+                <li>Cook</li>
+                <li>Copy</li>
+                <li>Crash Reporter</li>
+                <li>Crunchyroll</li>
+                <li>Crystal</li>
+                <li>Cydia</li>
+                <li>DarkSky</li>
+                <li>Dataman Next</li>
+                <li>Day One</li>
+                <li>Desmos</li>
+                <li>Destiny Companion</li>
+                <li>dict.cc</li>
+                <li>Dictionary</li>
+                <li>Dispatch</li>
+                <li>Documents 5</li>
+                <li>Dominos</li>
+                <li>Dropbox</li>
+                <li>DropCam</li>
+                <li>Droplr</li>
+                <li>Duet</li>
+                <li>Duomi Music</li>
+                <li>eBay</li>
+                <li>Elevate</li>
+                <li>Ember</li>
+                <li>ESPN ScoreCentre</li>
+                <li>Everlapse</li>
+                <li>Evernote</li>
+                <li>Excel</li>
+                <li>Exchange (iPhone &amp; iPad)</li>
+                <li>Expedia</li>
+                <li>Facebook Groups</li>
+                <li>Facebook Pages Manager</li>
+                <li>Facebook</li>
+                <li>FaceTime</li>
+                <li>Fantastical (iPhone &amp; iPad)</li>
+                <li>Fantasy Football</li>
+                <li>Find My Friends</li>
+                <li>Find My iPhone</li>
+                <li>fitbit</li>
+                <li>FitStar</li>
+                <li>Flex 2</li>
+                <li>Flickr</li>
+                <li>Flipagram</li>
+                <li>Flipboard</li>
+                <li>Flow WebBrowser</li>
+                <li>Flyte</li>
+                <li>FlyWheel</li>
+                <li>Foursquare</li>
+                <li>Fragment</li>
+                <li>Future Shop</li>
+                <li>Game Centre</li>
+                <li>Garageband</li>
+                <li>GBA4iOS</li>
+                <li>Ghit</li>
+                <li>Global News</li>
+                <li>Gmail</li>
+                <li>Google Admin</li>
+                <li>Google Authenticator</li>
+                <li>Google Chrome</li>
+                <li>Google Chromecast</li>
+                <li>Google Docs</li>
+                <li>Google Drive</li>
+                <li>Google Earth</li>
+                <li>Google Hangout</li>
+                <li>Google Inbox</li>
+                <li>Google Maps</li>
+                <li>Google Mobile</li>
+                <li>Google Music</li>
+                <li>Google Sheets</li>
+                <li>Google Slides</li>
+                <li>Google Translate</li>
+                <li>Google Voice</li>
+                <li>Google+</li>
+                <li>Gregorian</li>
+                <li>GroupMe</li>
+                <li>Groupon</li>
+                <li>GroupSMS</li>
+                <li>Health</li>
+                <li>Hulu Plus</li>
+                <li>Human</li>
+                <li>iBooks</li>
+                <li>iCleaner Pro</li>
+                <li>iCleaner</li>
+                <li>iCloud Drive</li>
+                <li>iFile</li>
+                <li>IFTTT</li>
+                <li>iFunny</li>
+                <li>IGN</li>
+                <li>IMDb</li>
+                <li>iMega</li>
+                <li>Imgupr</li>
+                <li>iMovie</li>
+                <li>Indiegogo</li>
+                <li>Indigo</li>
+                <li>Ingress</li>
+                <li>Instacast</li>
+                <li>Instagram</li>
+                <li>InstaMessage</li>
+                <li>Instapaper</li>
+                <li>iOctocat 2</li>
+                <li>iPhoto</li>
+                <li>IRCCloud Enterprise</li>
+                <li>IRCCloud</li>
+                <li>iSSH</li>
+                <li>iStrobe</li>
+                <li>iStudent</li>
+                <li>iTranslate</li>
+                <li>iTunes Connect</li>
+                <li>iTunes Store</li>
+                <li>iTunes U</li>
+                <li>iTV Shows</li>
+                <li>Jasmine</li>
+                <li>Jelly</li>
+                <li>Keynote</li>
+                <li>Kickstarter</li>
+                <li>Kik Messenger</li>
+                <li>Launch Centre Pro</li>
+                <li>Life360</li>
+                <li>LINE</li>
+                <li>LinkedIn</li>
+                <li>Livelens</li>
+                <li>Logacal</li>
+                <li>Lookout</li>
+                <li>Lyft</li>
+                <li>Mail</li>
+                <li>Mailbox</li>
+                <li>MapleBoy</li>
+                <li>Maps</li>
+                <li>Medium</li>
+                <li>Meow</li>
+                <li>Messages</li>
+                <li>Messenger</li>
+                <li>Mextures</li>
+                <li>Mingle</li>
+                <li>Mint</li>
+                <li>Mizzle Weather</li>
+                <li>Money</li>
+                <li>Moves</li>
+                <li>Music</li>
+                <li>MxTube</li>
+                <li>myAT&amp;T</li>
+                <li>mySIGGRAPH</li>
+                <li>MySpace</li>
+                <li>nds4ios</li>
+                <li>nest</li>
+                <li>Netbot (iPhone &amp; iPad)</li>
+                <li>Netflix</li>
+                <li>News Republic</li>
+                <li>Newsstand</li>
+                <li>NewTerm</li>
+                <li>Nintype</li>
+                <li>Notes</li>
+                <li>Notifyr</li>
+                <li>Now</li>
+                <li>Numbers</li>
+                <li>NYTimes</li>
+                <li>Office 365</li>
+                <li>OmniFocus 2</li>
+                <li>OnavoExtend</li>
+                <li>OneDrive (SkyDrive)</li>
+                <li>OneFootball</li>
+                <li>OpenTable</li>
+                <li>OpenVPN</li>
+                <li>Opera Mini</li>
+                <li>Overcast</li>
+                <li>OWA-iPad</li>
+                <li>OWA-iPhone</li>
+                <li>Pages Manager</li>
+                <li>Pages</li>
+                <li>Palavers</li>
+                <li>Pandora (Jewelry)</li>
+                <li>Pandora (Music)</li>
+                <li>Pandora Downloader</li>
+                <li>Paper</li>
+                <li>Parallels Access</li>
+                <li>Passbook</li>
+                <li>Passplex</li>
+                <li>Path</li>
+                <li>Paypal</li>
+                <li>pCalc</li>
+                <li>PDF Expert 5</li>
+                <li>Periscope</li>
+                <li>Phone</li>
+                <li>PhotoBooth</li>
+                <li>PhotoMath</li>
+                <li>Photos</li>
+                <li>Pinterest</li>
+                <li>Play Movies</li>
+                <li>PNC Mobile</li>
+                <li>Pocket Casts</li>
+                <li>Pocket</li>
+                <li>Podcasts</li>
+                <li>Pomodoro</li>
+                <li>Poptile</li>
+                <li>Powerpoint</li>
+                <li>PPTV</li>
+                <li>Preferences</li>
+                <li>Prompt 2</li>
+                <li>Prompt</li>
+                <li>PS Express</li>
+                <li>QQ (International)</li>
+                <li>QQ (iPad)</li>
+                <li>QQ</li>
+                <li>QQMusic</li>
+                <li>Quip</li>
+                <li>Quiz Up</li>
+                <li>Rap Genius</li>
+                <li>RAS Mobile I</li>
+                <li>Rdio</li>
+                <li>RealPlayer Cloud</li>
+                <li>Reddit AMA</li>
+                <li>Reddme</li>
+                <li>Reminders</li>
+                <li>Remote</li>
+                <li>Replay</li>
+                <li>Rise Alarm</li>
+                <li>Rogers My Account</li>
+                <li>Safari</li>
+                <li>Scan</li>
+                <li>Scanner Pro</li>
+                <li>Schoology</li>
+                <li>Shazam (RED)</li>
+                <li>Shazam</li>
+                <li>Simplenote</li>
+                <li>Sina Weibo</li>
+                <li>Skala View</li>
+                <li>Skanetrafiken</li>
+                <li>Skype Qik</li>
+                <li>Skype</li>
+                <li>Slack</li>
+                <li>Sleep Cycle</li>
+                <li>Smartglass</li>
+                <li>Snapchat</li>
+                <li>SoundCloud</li>
+                <li>Soundhound ∞</li>
+                <li>Soundhound</li>
+                <li>SourceLair</li>
+                <li>Spark Camera</li>
+                <li>Sparrow</li>
+                <li>Speedtest</li>
+                <li>Speek</li>
+                <li>Spendings</li>
+                <li>Sphere</li>
+                <li>Sphero</li>
+                <li>Spotify</li>
+                <li>Steam</li>
+                <li>Steps</li>
+                <li>Stocks</li>
+                <li>Strava</li>
+                <li>Suithub</li>
+                <li>Sunrise</li>
+                <li>Swarm</li>
+                <li>SwiftKey</li>
+                <li>Talkatone</li>
+                <li>Talkbox</li>
+                <li>Tangerine</li>
+                <li>Tapatalk</li>
+                <li>TD Canada</li>
+                <li>TeamViewer</li>
+                <li>TeeVee</li>
+                <li>Telegram Messenger</li>
+                <li>TelevisionTime</li>
+                <li>Tencent Weibo</li>
+                <li>Terminal</li>
+                <li>Tesltra 24/7</li>
+                <li>theScore</li>
+                <li>Things</li>
+                <li>Thunderspace</li>
+                <li>Tile</li>
+                <li>Timeplay</li>
+                <li>Tinder</li>
+                <li>Tips</li>
+                <li>TomTom</li>
+                <li>Trailers</li>
+                <li>Traktor DJ</li>
+                <li>Transit</li>
+                <li>Triposo</li>
+                <li>tumblr</li>
+                <li>TuneIn Radio</li>
+                <li>Tweetbot 2</li>
+                <li>Tweetbot 3</li>
+                <li>Tweetbot 4</li>
+                <li>Tweetbot for iPad</li>
+                <li>Twitch</li>
+                <li>Twitter</li>
+                <li>Tydlig</li>
+                <li>Uber</li>
+                <li>Unread</li>
+                <li>UPS</li>
+                <li>Urban Spoon</li>
+                <li>Vevo</li>
+                <li>Viber</li>
+                <li>Videos</li>
+                <li>vimeo</li>
+                <li>vine</li>
+                <li>VLC</li>
+                <li>Voice Memo</li>
+                <li>Watch</li>
+                <li>Waze</li>
+                <li>Weather</li>
+                <li>WeChat</li>
+                <li>Weiyou</li>
+                <li>Whatsapp</li>
+                <li>WiFi Passwords</li>
+                <li>Winterboard</li>
+                <li>Word</li>
+                <li>Wordpress</li>
+                <li>Wunderlist</li>
+                <li>Y! Messenger</li>
+                <li>Yahoo! Finance</li>
+                <li>Yahoo! Mail</li>
+                <li>Yahoo! News Digest</li>
+                <li>Yahoo! Search</li>
+                <li>Yahoo! Sports</li>
+                <li>Yahoo! Weather</li>
+                <li>YellowPages</li>
+                <li>yelp</li>
+                <li>YouNow</li>
+                <li>YouTube</li>
+                <li>Zedge</li>
+                <li>百度 HD</li>
+                <li>百度</li>
+                <li>百度貼吧 HD</li>
+                <li>百度貼吧</li>
+                <li>美麗新世界 (4.tw)</li>
+                <li>风行电影 HD</li>
+                <li>风行视频 HD</li>
+                <li>风行视频</li>
+              </ul>
+            </div>
+          </center>
+        </div>
+      </div>
+    <!-- End Tabs -->
+  </div>
+  </div>
+
+</body>
+
+<footer>
+  <center>
+<hr>
+  <p style="font-size:8pt">
+    Apple®, iPod®, iPad®, and iPhone® are trademarks of Apple Inc., registered in the U.S. and other countries.
+</p>
+</center>
+</footer>
+
+<script>
+  $(function() {
+    var hash = window.location.hash;
+    hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+    var navMain = $("#top-navbar");
+
+    navMain.on("click", "a", null, function() {
+      navMain.collapse('hide');
+    });
+  });
+</script>
+
+
+
+</html>
