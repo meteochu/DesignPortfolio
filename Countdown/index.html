@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Andy L (meteochu)">
+
+  <title>AP Computer Science Exam Countdown</title>
+
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/meteochu.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.js"></script>
+
+</head>
+<!-- NAVBAR
+================================================== -->
+
+<body>
+  <center>
+
+      <h1 style="font-size: 4.5em;"> Time until AP Computer Science Exam</h1>
+      <br>
+      <div id="time" style="font-size: 3.5em;"></div>
+      <!--<h2>Congrats. You finished the exam. Now, stop checking this page. :)</h2>-->
+
+    <script>
+      var tid = setInterval(timer, 1000);
+      var futureDate = new Date(2016, 5, 3, 8, 0, 0, 0);
+      futureDate.setMonth(futureDate.getMonth() - 1);
+      var currentTime = new Date();
+
+      var amount = 0;
+
+      function timer() {
+        currentTime = new Date();
+        amount = futureDate - currentTime;
+        document.getElementById("time").innerHTML = display(math(amount));
+
+        if (amount < 0) abortInterval(tid);
+      }
+
+      function math(amount) {
+        amount /= 1000;
+        var y = Math.floor(amount / (60 * 60 * 24 * 7 * 52));
+        var w = Math.floor(amount / (60 * 60 * 24 * 7) % 52);
+        var d = Math.floor(amount / (60 * 60 * 24) % 7);
+        var h = Math.floor(amount / (60 * 60) % 24);
+        var m = Math.floor(amount / 60 % 60);
+        var s = Math.floor(amount % 60);
+
+        return {
+          y: y,
+          w: w,
+          d: d,
+          h: h,
+          m: m,
+          s: s
+        };
+      }
+
+      function display(result) {
+
+        var time = "";
+        time += result.y != 0 ? (result.y + (result.y > 1 ? " years, " : "year, ")) : "";
+        time += result.w != 0 ? (result.w + (result.w > 1 ? " weeks, " : "week, ")) : "";
+        time += (result.d + (result.d > 1 ? " days, " : " day, "));
+        time += (result.h + (result.h > 1 ? " hours, " : " hour, "));
+        time += (result.m + " mins, ");
+        time += (result.s + " secs");
+
+        return time;
+      }
+    </script>
+  </center>
+</body>
+
+</html>
