@@ -202,66 +202,20 @@ p {
 #axla-jumbo {
   background-color: transparent;
 }
-#nav-logo {
-  height: 100%;
-  width: auto;
-}
-#shotsByPlayerId {
-  list-style-type: none;
-  padding-left: 10px;
-}
-.imageHolder {
-  position: relative;
-  padding-bottom: 10px;
-  margin-left: -15px;
-  margin-right: 15px;
-}
-.imageHolder .caption {
-  display: none;
-}
-.imageHolder:hover .caption {
-  display: initial;
-  font-size: 20pt;
-  position: absolute;
-  width: 100%;
-  bottom: 0px;
-  padding: auto;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.6);
-  text-align: center;
-  opacity: 0.75;
-  font-weight: 300;
-}
-
-.imageHolder .captionSmall {
-  display: none;
-}
-
-.imageHolder:hover .captionSmall {
-  display: initial;
-  font-size: 12pt;
-  position: absolute;
-  width: 100%;
-  bottom: 0px;
-  padding: auto;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  opacity: 0.75;
-  font-weight: 300;
 
 
-}
+
 .title {
   color: #5093DC;
   font-weight: 200;
 }
+
 #aboutText {
   font-size: 18px;
   font-weight: 200;
 }
 
-#dribbbleShotsHome {
+.dribbbleShots {
   list-style-type: none;
 }
 

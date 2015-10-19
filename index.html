@@ -54,27 +54,8 @@
             <img class="img-responsive" src="images/axla-3.png" srcset="images/axla-3.png 1x, images/axla-3@2x.png 2x" onDragStart="return false" />
           </center>
         </a>
-
         <hr>
-
-        <ul id="dribbbleShotsHome"></ul>
-        <script>
-          $.jribbble.setToken('fa3aa5ae50843f46a01f1f4f24e1a35925831ea07c38ed434b861132b6fd7f20');
-          $.jribbble.users('meteochu').shots({
-            per_page: 4
-          }).then(function(shots) {
-            var html = '';
-            shots.forEach(function(shot) {
-              // See the Dribbble docs for all available shot properties.
-              html += '<li><div class="col-lg-3 col-md-6 col-sm-6"><div class="imageHolder">';
-              html += '<a href="' + shot.html_url + '">';
-              html += '<img src="' + shot.images.normal + '" ';
-              html += 'class="img-responsive img-rounded" alt="' + shot.title + '">';
-              html += '</a><p class="captionSmall">' + shot.title + '</p></div></div></li>';
-            });
-            document.getElementById('dribbbleShotsHome').innerHTML = html;
-          });
-        </script>
+        <ul class="dribbbleShots" id="dribbbleShotsHome"></ul>
       </div>
       <!-- Design Tab -->
       <div class="tab-pane fade" id="designs">
@@ -93,27 +74,9 @@
         <hr>
         <div class="container">
           <h2 class="title" align="center">Dribbble Shots</h2>
-          <ul id="shotsByPlayerId"></ul>
-          <script>
-            $.jribbble.setToken('fa3aa5ae50843f46a01f1f4f24e1a35925831ea07c38ed434b861132b6fd7f20');
-            $.jribbble.users('meteochu').shots({
-              per_page: 12
-            }).then(function(shots) {
-              var html = '';
-              shots.forEach(function(shot) {
-                // See the Dribbble docs for all available shot properties.
-                html += '<li><div class="col-lg-3 col-md-3 col-sm-6"><div class="imageHolder">';
-                html += '<a href="' + shot.html_url + '">';
-                html += '<img src="' + shot.images.normal + '" class="img-responsive img-rounded" ';
-                html += 'alt="' + shot.title + '"></a>';
-                html += '<p class="caption">' + shot.title + '</p></div></div></li>';
-              });
-              document.getElementById('shotsByPlayerId').innerHTML = html;
-            });
-          </script>
+          <ul class="dribbbleShots" id="dribbbleShotsDesigns"></ul>
         </div>
         <br>
-
       </div>
       <!-- Axla 3 Tab -->
       <div class="tab-pane fade" id="axla">
@@ -578,19 +541,19 @@
           </center>
         </div>
       </div>
-    <!-- End Tabs -->
-  </div>
+      <!-- End Tabs -->
+    </div>
   </div>
 
 </body>
 
 <footer>
   <center>
-<hr>
-  <p style="font-size:8pt">
-    Apple®, iPod®, iPad®, and iPhone® are trademarks of Apple Inc., registered in the U.S. and other countries.
-</p>
-</center>
+    <hr>
+    <p style="font-size:8pt">
+      Apple®, iPod®, iPad®, and iPhone® are trademarks of Apple Inc., registered in the U.S. and other countries.
+    </p>
+  </center>
 </footer>
 
 <script>
@@ -602,6 +565,34 @@
     navMain.on("click", "a", null, function() {
       navMain.collapse('hide');
     });
+  });
+</script>
+
+<script>
+  $.jribbble.setToken('fa3aa5ae50843f46a01f1f4f24e1a35925831ea07c38ed434b861132b6fd7f20');
+
+  var loopHTML = function(shots) {
+    var html = '';
+    shots.forEach(function(shot) {
+      html += '<li><div class="col-lg-3 col-md-6 col-sm-6"><center>';
+      html += '<a href="' + shot.html_url + '" class="imageHolder">';
+      html += '<img src="' + shot.images.normal + '" ';
+      html += 'class="img-responsive img-rounded" alt="' + shot.title + '">';
+      html += '</a><p class="caption">' + shot.title + '</p></center></div></li>';
+    });
+    return html;
+  }
+
+  $.jribbble.users('meteochu').shots({
+    per_page: 4
+  }).then(function(shots) {
+    document.getElementById('dribbbleShotsHome').innerHTML = loopHTML(shots);
+  });
+
+  $.jribbble.users('meteochu').shots({
+    per_page: 12
+  }).then(function(shots) {
+    document.getElementById('dribbbleShotsDesigns').innerHTML = loopHTML(shots);
   });
 </script>
 
