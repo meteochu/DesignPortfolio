@@ -2,19 +2,18 @@
  * Base structure
  */
 
+
 /* Move down content because we have a fixed navbar that is 50px tall */
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:300,400,500);
- body {
+body {
   padding-top: 80px;
   font-family: -apple-system, "Helvetica Neue", sans-serif;
 }
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-family: -apple-system, "Helvetica Neue", sans-serif;
 }
+
 /* Hide for mobile, show later */
 
 #id {
@@ -23,6 +22,7 @@ h4 {
 #axla-img {
   font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Helvetica, "Raleway", sans-serif;
 }
+
 /*
  * Main content
  */
@@ -31,20 +31,14 @@ h4 {
   padding: 20px;
   overflow-x: hidden;
 }
-
-h1,
-h2,
-h3,
-h4,
-body {
+h1, h2, h3, h4, body {
   font-weight: 300;
 }
 @media (min-device-pixel-ratio: 2) {
-/* nill */
+  /* nill */
 }
 p {
   font-size: 14pt;
-
 }
 @media (max-width: 512px) {
   #axla-img {
@@ -121,12 +115,14 @@ p {
     width: 20%;
   }
 }
+
 }
 #iconRequestList {
   list-style-type: decimal;
 }
+@media (min-width: 768px) {
+  /* Big */
 
-@media (min-width: 768px) { /* Big */
   .navbar-nav {
     margin: 0 auto;
     display: table;
@@ -134,92 +130,71 @@ p {
     float: none;
     background-color: transparent !important;
   }
-
   #top-navbar .active {
     background-color: transparent !important;
     border-color: #5093DC;
   }
-
   .navbar-default {
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     border-color: transparent;
   }
-
   .navbar-default .navbar-nav > li > a {
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
   }
-
-  .navbar-default .navbar-nav > .active > a,
-  .navbar-default .navbar-nav > .active > a:hover,
-  .navbar-default .navbar-nav > .active > a:focus {
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #0078ff;
     background-color: transparent;
   }
+}
+/* Ends Here */
+@media (max-width: 767px) {
+  /* Small */
 
-  } /* Ends Here */
-
-@media (max-width: 767px) { /* Small */
   .navbar-nav {
     text-align: center;
   }
-
   .navbar-default {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     border-color: transparent;
   }
-
   .navbar-default .navbar-nav > li > a {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
   }
-
-  .navbar-default .navbar-nav > .active > a,
-  .navbar-default .navbar-nav > .active > a:hover,
-  .navbar-default .navbar-nav > .active > a:focus {
-    color: rgba(255,255,255,0.8);
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
   }
-
-  .navbar-default .navbar-nav > li > a:hover,
-  .navbar-default .navbar-nav > li > a:focus {
+  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #fff;
     background-color: transparent;
   }
-
   .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
   }
-
-  .navbar-default .navbar-toggle:hover,
-  .navbar-default .navbar-toggle:focus {
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: #333;
   }
-
-  } /* Ends Here */
-
+}
+/* Ends Here */
 #light {
   font-weight: 300;
 }
 #axla-jumbo {
   background-color: transparent;
 }
-
-
-
 .title {
   color: #5093DC;
   font-weight: 200;
 }
-
 #aboutText {
   font-size: 18px;
   font-weight: 200;
 }
-
 .dribbbleShots {
   list-style-type: none;
 }
-
 .navbar {
   font-weight: 300;
   font-size: 16pt;
+  -webkit-backdrop-filter: blur(5px);
 }
