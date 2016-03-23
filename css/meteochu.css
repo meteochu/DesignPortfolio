@@ -1,11 +1,4 @@
-/*
- * Base structure
- */
 
-
-/* Move down content because we have a fixed navbar that is 50px tall */
-
-@import url(http://fonts.googleapis.com/css?family=Raleway:300,400,500);
 body {
   padding-top: 80px;
   font-family: -apple-system, "Helvetica Neue", sans-serif;
@@ -14,31 +7,26 @@ h1, h2, h3, h4 {
   font-family: -apple-system, "Helvetica Neue", sans-serif;
 }
 
-/* Hide for mobile, show later */
-
-#id {
-  overflow-x: scroll;
-}
-#axla-img {
-  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Helvetica, "Raleway", sans-serif;
-}
-
-/*
- * Main content
- */
-
-.main {
-  padding: 20px;
-  overflow-x: hidden;
-}
 h1, h2, h3, h4, body {
   font-weight: 300;
 }
-@media (min-device-pixel-ratio: 2) {
-  /* nill */
-}
 p {
   font-size: 14pt;
+}
+#light {
+  font-weight: 300;
+}
+.title {
+  color: #5093DC;
+  font-weight: 200;
+}
+.dribbbleShots {
+  list-style-type: none;
+}
+.navbar {
+  font-weight: 300;
+  font-size: 16pt;
+  -webkit-backdrop-filter: blur(5px);
 }
 @media (max-width: 512px) {
   #axla-img {
@@ -60,10 +48,6 @@ p {
   }
 }
 @media (min-width: 512px) {
-  #axla-img {
-    height: auto;
-    width: 100%;
-  }
   ul.list {
     list-style-type: none;
     overflow: hidden;
@@ -80,10 +64,6 @@ p {
   }
 }
 @media (min-width: 768px) {
-  #axla-img {
-    height: 60vh;
-    width: auto;
-  }
   ul.list {
     list-style-type: none;
     overflow: hidden;
@@ -115,14 +95,8 @@ p {
     width: 20%;
   }
 }
-
-}
-#iconRequestList {
-  list-style-type: decimal;
-}
 @media (min-width: 768px) {
   /* Big */
-
   .navbar-nav {
     margin: 0 auto;
     display: table;
@@ -146,10 +120,11 @@ p {
     background-color: transparent;
   }
 }
+
 /* Ends Here */
+
 @media (max-width: 767px) {
   /* Small */
-
   .navbar-nav {
     text-align: center;
   }
@@ -174,27 +149,4 @@ p {
   .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: #333;
   }
-}
-/* Ends Here */
-#light {
-  font-weight: 300;
-}
-#axla-jumbo {
-  background-color: transparent;
-}
-.title {
-  color: #5093DC;
-  font-weight: 200;
-}
-#aboutText {
-  font-size: 18px;
-  font-weight: 200;
-}
-.dribbbleShots {
-  list-style-type: none;
-}
-.navbar {
-  font-weight: 300;
-  font-size: 16pt;
-  -webkit-backdrop-filter: blur(5px);
 }
