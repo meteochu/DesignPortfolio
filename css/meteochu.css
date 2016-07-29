@@ -23,12 +23,13 @@ p {
     list-style-type: none;
 }
 .shot {
-    margin: 20px;
+    box-shadow: 0 5px 10px -1px rgba(0, 0, 0, 0.5);
     transition: all .3s ease-in-out;
+    margin: 20px;
 }
 .shot:hover, .shot:focus, .shot:active {
-    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
-    transform: scale(1.08);
+    box-shadow: 0 10px 15px -1px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
 }
 .navbar {
     font-weight: 300;
