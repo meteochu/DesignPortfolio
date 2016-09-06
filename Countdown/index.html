@@ -58,24 +58,21 @@
                 d: Math.floor(amount / (60 * 60 * 24) % 7),
                 h: Math.floor(amount / (60 * 60) % 24),
                 m: Math.floor(amount / 60 % 60),
-                s: Math.floor(amount % 60)
+                s: Math.floor(amount % 60),
+                ms: amount
             };
         }
 
         function display(result) {
-            if (result.s < 0) return "Congratulations! You're done!";
+            if (result.ms <= 0) return "Congratulations! You're done!";
             var time = "";
-            time += label(result.y, "year", "years");
-            time += label(result.w, "week", "weeks");
-            time += label(result.d, "day", "days");
-            time += label(result.h, "hr", "hrs");
-            time += result.m + (result.m > 1 ? " mins " : " min ");
-            time += result.s + (result.s > 1 ? " secs " : " sec ");
+            time += label(result.y, "y", 0) + label(result.w, "w", 0) + label(result.d, "d", 0);
+            time += label(result.h, "h", -1) + label(result.m, "m", -1) + label(result.s, "s", -1);
             return time;
         }
 
-        function label(value, singularString, pluralString) {
-            return value != 0 ? (value + " " + (value > 1 ? pluralString : singularString) + " ") : "";
+        function label(value, string, hideAtValue) {
+            return value != hideAtValue ? "<span class=\"value\">" + value + "</span><span class=\"label\">" + string + "</span>" : "";
         }
     </script>
     <!-- Confetti -->
