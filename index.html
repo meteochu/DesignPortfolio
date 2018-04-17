@@ -62,8 +62,6 @@
 </script>
 
 <script>
-    $.jribbble.setToken('fa3aa5ae50843f46a01f1f4f24e1a35925831ea07c38ed434b861132b6fd7f20');
-
     var loopHTML = function(shots) {
         var html = '';
         shots.forEach(function(shot) {
@@ -76,8 +74,8 @@
         return html;
     }
 
-    $.jribbble.users('meteochu').shots().then(function(shots) {
-        document.getElementById('dribbbleShots').innerHTML = loopHTML(shots);
+    jribbble.shots({ token: 'ccec6985fd3ed78631881c8c5f48afa9b4603f3823cecb293d53134e30c4349a' }, function(shotsArray) {
+        document.getElementById('dribbbleShots').innerHTML = loopHTML(shotsArray);
     });
 </script>
 
