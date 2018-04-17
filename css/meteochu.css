@@ -40,7 +40,8 @@ p {
     border-color: rgba(0, 0, 0, 0.15);
     border-width: 0 0 1pt 0;
     border-style: solid;
-    -webkit-backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari 9+ */
+    backdrop-filter: blur(8px); /* Chrome and Opera */
 }
 
 .navbar-toggler {
